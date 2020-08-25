@@ -2,25 +2,25 @@
  本篇使用 Fortigate 60E 來實作與 Azure 建立單一 S2S VPN 連線通道，閱讀完此篇文章您將會：<br>
  - 使用 Azure 入口網站建立與設定虛擬網路、虛擬網路閘道、區域網路閘道<br>
  - 設定 Fortigate 60E IPsec Tunnels、Policy<br>
- - 驗證傳輸到虛擬網路的 VPN 輸送量<br>
 
 ## 環境說明
+
+ 在建立 S2S VPN 期間，您需要了解內部部署與 Azure 的網路環境與相關配置，常見的蒐集資訊如下。
+
  - On Premises 環境
 	- Fortigate 60E v6.2.2 build1010，請確認您的 VPN 設備有出現在設備驗證清單中 <br>
 	  https://docs.microsoft.com/zh-tw/azure/vpn-gateway/vpn-gateway-about-vpn-devices<br>
-	- Public IP : 
-	- Subnet ： 192.168.1.0/24
+	- Public IP : 114.32.191.\*\*\* <br>
+	- VLAN(Subnet) ： 192.168.1.0/24<br>
+	- Pre-shared Key ：20200825<br>
 
- - Azure 環境
+ - Azure 虛擬網路環境<br>
 	- 虛擬網路名稱 ： VNet<br>
 	- 位置空間 ： 172.16.0.0/16<br>
 	- 子網路 ： WorkloadSubnet 172.16.1.0/24<br>
 	- 閘道子網路 ： GatewaySubnet 172.16.10.0/27，請將範圍設為至少/27的空間位置<br>
-	- 虛擬網路閘道名稱： VNetGW
-	- 公用 IP 位址名稱： VNetGWPip
-	- VPN 類型： 以路由為基礎 (路由 Route Base = 動態路由、原則 Policy Base = 靜態路由)
-	- 區域網路閘道名稱： Site1
-	- 連接名稱： VNet1toSite1
+	- Pre-shared Key ：20200825<br>
+
 
 ## Azure 入口網站
  - 建立虛擬網路 VNET<br>
@@ -46,6 +46,6 @@
 
 ## Fortigate 60E
 
-## 驗證傳輸到虛擬網路的 VPN 輸送量
+
 
 **參考來源與更詳細的說明**
