@@ -57,7 +57,7 @@
 	- 點選虛擬網路閘道 VNETGW，選擇設定欄位下的連接，新增連線<br>
 	![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/S2S/Fortigate/image/connetion1.png "connetion1")<br>
 	- 輸入名稱、連接類型「站對站(IPsec)」、選擇區域網路閘道 LOCALGW、輸入共用金鑰(PSK)「20200825」、IKE通訊協定選擇「IKEv2」<br>
-	![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/S2S/Fortigate/image/connetion2.png "connetion2")<br>
+	![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/S2S/Fortigate/image/connetion2.PNG "connetion2")<br>
 
 ## Fortigate 60E
 
