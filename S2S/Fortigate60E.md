@@ -39,9 +39,9 @@
 		- 閘道類型選擇路由，(路由 Route Base = 動態路由、原則 Policy Base = 靜態路由)<br>
 		- SKU選擇 VpnGW1，規格說明請參考 https://docs.microsoft.com/zh-tw/azure/vpn-gateway/vpn-gateway-about-vpngateways#gateway-skus-by-tunnel-connection-and-throughput<br>
 		- 虛擬網路選擇 VNET<br>
-		- 建立新的公用 IP 位置，輸入公用 IP 位址名稱 VNTGWPIP。**您只需要輸入名稱，就會自動幫您建立適合的公用 IP 位址**<>
-		- 停用主動模式
-		- 停用 BGP ASN
+		- 建立新的公用 IP 位置，輸入公用 IP 位址名稱 VNTGWPIP。**您只需要輸入名稱，就會自動幫您建立適合的公用 IP 位址**<br>
+		- 停用主動模式<br>
+		- 停用 BGP ASN<br>
 		![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/S2S/image/createvnetgw2.PNG "createvnetgw2")<br>
 
 ## Fortigate 60E
