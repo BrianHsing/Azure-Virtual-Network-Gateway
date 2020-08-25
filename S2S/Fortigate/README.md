@@ -25,14 +25,14 @@
 ## Azure 入口網站
  - 建立虛擬網路 VNET<br>
 	- 在 Azure 入口網站搜尋欄中搜尋虛擬網路，並點選
-	![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/tree/master/S2S/Fortigate/image/createvnet1.PNG "createvnet1")<br>
+	![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/S2S/Fortigate/image/createvnet1.PNG "createvnet1")<br>
 	- 點選「新增」，選擇您的訂用帳戶、資源群組、名稱輸入 VNET、區域選擇日本東部後，點選「下一步：IP 位址」<br>
-	![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/tree/master/S2S/Fortigate/image/createvnet3.PNG "createvnet3")<br>
+	![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/S2S/Fortigate/image/createvnet3.PNG "createvnet3")<br>
 	- IPv4 位址空間請輸入 172.16.0.0/16，建立兩個子網路，分別為 WorkloadSubnet 172.16.1.0/24、GatewaySubnet 172.16.10.0/27，請將 GatewaySubnet 範圍設為至少/27的空間位置。請按「檢閱 + 建立」，按下「建立」後完成。<br>
-	![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/tree/master/S2S/Fortigate/image/createvnet4.PNG "createvnet4")<br>
+	![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/S2S/Fortigate/image/createvnet4.PNG "createvnet4")<br>
  - 建立虛擬網路閘道 VNETGW<br>
 	- 在 Azure 入口網站搜尋欄中搜尋虛擬網路閘道，並點選
-	![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/tree/master/S2S/Fortigate/image/createvnetgw1.PNG "createvnetgw1")<br>
+	![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/S2S/Fortigate/image/createvnetgw1.PNG "createvnetgw1")<br>
 	- 點選「新增」，填入以下資訊，請按「檢閱 + 建立」，再次按下「建立」後完成。**需要大約 40 分鐘的部署時間**<br>
 		- 名稱輸入 VNETGW<br>
 		- 區域選擇日本東部<br>
@@ -42,22 +42,22 @@
 		- 建立新的公用 IP 位置，輸入公用 IP 位址名稱 VNTGWPIP。**您只需要輸入名稱，就會自動幫您建立適合的公用 IP 位址**<br>
 		- 停用主動模式<br>
 		- 停用 BGP ASN<br>
-		![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/tree/master/S2S/Fortigate/image/createvnetgw2.PNG "createvnetgw2")<br>
+		![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/S2S/Fortigate/image/createvnetgw2.PNG "createvnetgw2")<br>
  - 建立區域網路閘道 LOCALGW<br>
 	- 在 Azure 入口網站搜尋欄中搜尋區域網路閘道，並點選
-	![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/tree/master/S2S/Fortigate/image/createlocalnetgw1.PNG "createlocalnetgw1")<br>
+	![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/S2S/Fortigate/image/createlocalnetgw1.PNG "createlocalnetgw1")<br>
 	- 點選「新增」，填入以下資訊，請按「檢閱 + 建立」，再次按下「建立」後完成。<br>
 		- 名稱輸入 LOCALGW<br>
 		- IP 位址輸入 114.32.191.\*\*\*<br>
 		- 位址空間請填入 192.168.1.0/24，**這邊填入的網段，代表您希望能從 Azure 虛擬網路中路由到的網段**<br>
 		- 不勾選 BGP 設定<br>
 		- 選擇對應的訂用帳戶、資源群組、位置後，點選「建立」<br>
-		![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/tree/master/S2S/Fortigate/image/createlocalnetgw2.PNG "createlocalnetgw2")<br>
+		![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/S2S/Fortigate/image/createlocalnetgw2.PNG "createlocalnetgw2")<br>
  - 建立連線 connection
 	- 點選虛擬網路閘道 VNETGW，選擇設定欄位下的連接，新增連線<br>
-	![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/tree/master/S2S/Fortigate/image/connetion1.png "connetion1")<br>
+	![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/S2S/Fortigate/image/connetion1.png "connetion1")<br>
 	- 輸入名稱、連接類型「站對站(IPsec)」、選擇區域網路閘道 LOCALGW、輸入共用金鑰(PSK)「20200825」、IKE通訊協定選擇「IKEv2」<br>
-	![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/tree/master/S2S/Fortigate/image/connetion2.png "connetion2")<br>
+	![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/S2S/Fortigate/image/connetion2.png "connetion2")<br>
 
 ## Fortigate 60E
 
