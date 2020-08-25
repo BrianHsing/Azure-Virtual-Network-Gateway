@@ -23,14 +23,27 @@
 	- 連接名稱： VNet1toSite1
 
 ## Azure 入口網站
- - 建立虛擬網路 VNet<br>
+ - 建立虛擬網路 VNET<br>
 	- 在 Azure 入口網站搜尋欄中搜尋虛擬網路，並點選
 	![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/S2S/image/createvnet1.PNG "createvnet1")<br>
 	- 點選「新增」，選擇您的訂用帳戶、資源群組、名稱輸入 VNET、區域選擇日本東部後，點選「下一步：IP 位址」<br>
 	![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/S2S/image/createvnet3.PNG "createvnet3")<br>
 	- IPv4 位址空間請輸入 172.16.0.0/16，建立兩個子網路，分別為 WorkloadSubnet 172.16.1.0/24、GatewaySubnet 172.16.10.0/27，請將 GatewaySubnet 範圍設為至少/27的空間位置。請按「檢閱 + 建立」，按下「建立」後完成。<br>
 	![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/S2S/image/createvnet4.PNG "createvnet4")<br>
- - 建立虛擬閘道 VNetGW<br>
+ - 建立虛擬網路閘道 VNETGW<br>
+	- 在 Azure 入口網站搜尋欄中搜尋虛擬網路閘道，並點選
+	![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/S2S/image/createvnetgw1.PNG "createvnetgw1")<br>
+	- 點選「新增」，填入以下資訊：<br>
+		- 名稱輸入 VNETGW<br>
+		- 區域選擇日本東部<br>
+		- 閘道類型選擇路由，(路由 Route Base = 動態路由、原則 Policy Base = 靜態路由)<br>
+		- SKU選擇 VpnGW1，規格說明請參考 https://docs.microsoft.com/zh-tw/azure/vpn-gateway/vpn-gateway-about-vpngateways#gateway-skus-by-tunnel-connection-and-throughput<br>
+		- 虛擬網路選擇 VNET<br>
+		- 建立新的公用 IP 位置，輸入公用 IP 位址名稱 VNTGWPIP。**您只需要輸入名稱，就會自動幫您建立適合的公用 IP 位址**<>
+		- 停用主動模式
+		- 停用 BGP ASN
+		![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/S2S/image/createvnetgw2.PNG "createvnetgw2")<br>
+
 ## Fortigate 60E
 
 ## 驗證傳輸到虛擬網路的 VPN 輸送量
