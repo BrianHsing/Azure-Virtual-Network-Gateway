@@ -80,4 +80,8 @@
  ![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/S2S/Fortigate/image/fortigate10.PNG "fortigate10")<br>	
  - TCP MSS 設定為 1350 (TCP資料封包每次能夠傳輸的最大資料分段)<br>
  - MTU 設定為 1400 (最大傳輸單元，此數值會影響傳輸效能)<br>
+
 **參考來源與更詳細的說明**
+https://docs.microsoft.com/zh-tw/azure/vpn-gateway/vpn-gateway-about-vpn-devices <br>
+https://docs.microsoft.com/zh-tw/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal<br>
+https://docs.fortinet.com/document/fortigate/6.2.0/azure-cookbook/989216/connecting-a-local-fortigate-to-an-azure-vnet-vpn <br>
