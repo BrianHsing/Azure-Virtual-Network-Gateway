@@ -39,7 +39,7 @@
 		- 閘道類型選擇路由，(路由 Route Base = 動態路由、原則 Policy Base = 靜態路由)<br>
 		- SKU選擇 VpnGW1，規格說明請參考 https://docs.microsoft.com/zh-tw/azure/vpn-gateway/vpn-gateway-about-vpngateways#gateway-skus-by-tunnel-connection-and-throughput<br>
 		- 虛擬網路選擇 VNET<br>
-		- 建立新的公用 IP 位置，輸入公用 IP 位址名稱 VNTGWPIP。**您只需要輸入名稱，就會自動幫您建立適合的公用 IP 位址**<br>
+		- 建立新的公用 IP 位址，輸入公用 IP 位址名稱 VNTGWPIP。**您只需要輸入名稱，就會自動幫您建立適合的公用 IP 位址**<br>
 		- 停用主動模式<br>
 		- 停用 BGP ASN<br>
 		![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/S2S/Fortigate/image/createvnetgw2.PNG "createvnetgw2")<br>
@@ -60,7 +60,24 @@
 	![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/S2S/Fortigate/image/connetion2.PNG "connetion2")<br>
 
 ## Fortigate 60E
-
+ - 建立 IPsec Tunnels
+	- 決定您要使用哪一個公用 IP 與 Azure 建立 Tunnel，我這邊只有一個 IP 位址，所以選擇使用 WAN1 的 IP 位址<br>
+	![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/S2S/Fortigate/image/fortigate2.png "fortigate2")<br>
+	- 在左邊導覽列中，展開 VPN，選擇 IPsec Wizard，建立 IPsec Tunnels，輸入 Name 並選擇 Template Type Custom<br>
+	![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/S2S/Fortigate/image/fortigate3.png "fortigate3")<br>
+	- 在 Network 區塊中，填入虛擬網路閘道 VNETGW 的公用 IP 位址，並將 NAT Traversal Disable(如果未來想要啟用強制通道，則切換為 Enable)、Dead Peer Detection On Idle (系統將判定與遠端站台的連線是否斷線)<br>
+	![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/S2S/Fortigate/image/fortigate4.png "fortigate4")<br>	
+	- Pre-shared Key 與 Azure 連線設定一致，IKE請選擇 Version 2<br>
+	![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/S2S/Fortigate/image/fortigate5.png "fortigate5")<br>	
+	- Phase 1 為主要連線，Encryption 請設定 AES256、Authentication 請設定為 SHA1、Diffie-Hellman Group 請選擇 2 (密碼交換強度)、Key Lifetime 請設定 28800 (不影響傳輸速率)<br>
+	![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/S2S/Fortigate/image/fortigate6.png "fortigate6")<br>	
+	- Phase 2 為快速連線，Local Address 代表內部佈署的網段、Remote Address 代表 Azure 虛擬網路的子網路，Encryption 請選擇 AES256GCM、AES265，Authentication 請選擇 SHA1(Encryption、Authentication 會影響傳輸速率)，取消勾選 Enable Replay Detection(偵測已無回應之連線對象)、PFS(啟動此功能可能會略為影響效能，但可加強安全性)<br>
+ 	![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/S2S/Fortigate/image/fortigate7.png "fortigate7")<br>	
+ - 設定 Static Route (靜態路由)，必須要讓設備知道 Azure 虛擬網路子網路該往哪送<br>
+ ![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/S2S/Fortigate/image/fortigate8.png "fortigate8")<br>	
+ - 設定 Policy (原則)，這裡設定 Azure 子網路到內部部署子網段的連線管理原則，**NAT 請關閉**<br>
+ ![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/S2S/Fortigate/image/fortigate9.png "fortigate9")<br>	
+ ![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/S2S/Fortigate/image/fortigate10.png "fortigate10")<br>	
 
 
 **參考來源與更詳細的說明**
