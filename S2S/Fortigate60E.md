@@ -19,8 +19,8 @@
 	- 位置空間 ： 172.16.0.0/16<br>
 	- 子網路 ： WorkloadSubnet 172.16.1.0/24<br>
 	- 閘道子網路 ： GatewaySubnet 172.16.10.0/27，請將範圍設為至少/27的空間位置<br>
+	- 閘道公用 IP 位址：\*\*\*.\*\*\*.\*\*\*.\*\*\*，**您建立的會與本篇顯示的不同**<br>
 	- Pre-shared Key ：20200825<br>
-
 
 ## Azure 入口網站
  - 建立虛擬網路 VNET<br>
@@ -43,7 +43,16 @@
 		- 停用主動模式<br>
 		- 停用 BGP ASN<br>
 		![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/S2S/image/createvnetgw2.PNG "createvnetgw2")<br>
-
+ - 建立區域網路閘道 LOCALGW<br>
+	- 在 Azure 入口網站搜尋欄中搜尋區域網路閘道，並點選
+	![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/S2S/image/createlocalnetgw1.PNG "createlocalnetgw1")<br>
+	- 點選「新增」，填入以下資訊，請按「檢閱 + 建立」，再次按下「建立」後完成。<br>
+		- 名稱輸入 LOCALGW<br>
+		- IP 位址輸入 114.32.191.\*\*\*<br>
+		- 位址空間請填入 192.168.1.0/24，**這邊填入的網段，代表您希望能從 Azure 虛擬網路中路由到的網段**<br>
+		- 不勾選 BGP 設定<br>
+		- 選擇對應的訂用帳戶、資源群組、位置後，點選「建立」<br>
+		![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/S2S/image/createlocalnetgw2.PNG "createlocalnetgw2")<br>
 ## Fortigate 60E
 
 
