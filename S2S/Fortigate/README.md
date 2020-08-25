@@ -87,8 +87,9 @@
 			set tcp-mss-receiver 1350 
 		next 
 	end
-	``` <br>
-	 ![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/S2S/Fortigate/image/fortigate11.PNG "fortigate11")<br>	
+	```
+	
+	![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/S2S/Fortigate/image/fortigate11.PNG "fortigate11")<br>	
  - MTU 設定為 1400 (最大傳輸單元，此數值會影響傳輸效能)<br>
 	- 找到 IPsec Tunnel 的 MTU <br>
 	`fnsysctl ifconfig -a`<br>
