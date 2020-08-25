@@ -8,6 +8,7 @@
  - On Premises 環境
 	- Fortigate 60E v6.2.2 build1010，請確認您的 VPN 設備有出現在設備驗證清單中 <br>
 	  https://docs.microsoft.com/zh-tw/azure/vpn-gateway/vpn-gateway-about-vpn-devices<br>
+	- Public IP : 
 	- Subnet ： 192.168.1.0/24
 
  - Azure 環境
@@ -23,9 +24,13 @@
 
 ## Azure 入口網站
  - 建立虛擬網路 VNet<br>
+	- 在 Azure 入口網站搜尋欄中搜尋虛擬網路，並點選
+	![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/S2S/image/createvnet1.PNG "createvnet1")<br>
 	- 點選「新增」，選擇您的訂用帳戶、資源群組、名稱輸入 VNET、區域選擇日本東部後，點選「下一步：IP 位址」<br>
-	- IPv4 位址空間請輸入 172.16.0.0/16，建立兩個子網路，分別為 WorkloadSubnet 172.16.1.0/24、GatewaySubnet 172.16.10.0/27，請將 GatewaySubnet 範圍設為至少/27的空間位置。
-
+	![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/S2S/image/createvnet3.PNG "createvnet3")<br>
+	- IPv4 位址空間請輸入 172.16.0.0/16，建立兩個子網路，分別為 WorkloadSubnet 172.16.1.0/24、GatewaySubnet 172.16.10.0/27，請將 GatewaySubnet 範圍設為至少/27的空間位置。請按「檢閱 + 建立」，按下「建立」後完成。<br>
+	![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/S2S/image/createvnet4.PNG "createvnet4")<br>
+ - 建立虛擬閘道 VNetGW<br>
 ## Fortigate 60E
 
 ## 驗證傳輸到虛擬網路的 VPN 輸送量
