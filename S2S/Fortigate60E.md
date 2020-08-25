@@ -33,7 +33,7 @@
  - 建立虛擬網路閘道 VNETGW<br>
 	- 在 Azure 入口網站搜尋欄中搜尋虛擬網路閘道，並點選
 	![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/S2S/image/createvnetgw1.PNG "createvnetgw1")<br>
-	- 點選「新增」，填入以下資訊：<br>
+	- 點選「新增」，填入以下資訊，請按「檢閱 + 建立」，再次按下「建立」後完成。**需要大約 40 分鐘的部署時間**<br>
 		- 名稱輸入 VNETGW<br>
 		- 區域選擇日本東部<br>
 		- 閘道類型選擇路由，(路由 Route Base = 動態路由、原則 Policy Base = 靜態路由)<br>
