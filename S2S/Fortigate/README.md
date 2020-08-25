@@ -1,7 +1,7 @@
 # 實作 Azure 與 Fortigate 60E 的 S2S VPN 連線
  本篇使用 Fortigate 60E 來實作與 Azure 建立單一 S2S VPN 連線通道，閱讀完此篇文章您將會：<br>
  - 使用 Azure 入口網站建立與設定虛擬網路、虛擬網路閘道、區域網路閘道<br>
- - 設定 Fortigate 60E IPsec Tunnels、Policy<br>
+ - 設定 Fortigate 60E IPsec Tunnels、Static Route、Policy、TCP MSS、MTC<br>
 
 ## 環境說明
 
@@ -80,10 +80,14 @@
  ![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/S2S/Fortigate/image/fortigate10.PNG "fortigate10")<br>	
  - TCP MSS 設定為 1350 (TCP資料封包每次能夠傳輸的最大資料分段)<br>
 	- 設定方式是將剛剛新增的兩筆 Policy 透過命令列的方式設定 TCP MSS 1350<br>
-	`config firewall policy edit <policy-id> set tcp-mss-sender 1350 set tcp-mss-receiver 1350 next end`
+	`config firewall policy edit <policy-id> set tcp-mss-sender 1350 set tcp-mss-receiver 1350 next end` <br>
 	 ![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/S2S/Fortigate/image/fortigate11.PNG "fortigate11")<br>	
-
  - MTU 設定為 1400 (最大傳輸單元，此數值會影響傳輸效能)<br>
+	- 找到 IPsec Tunnel 的 MTU <br>
+	`fnsysctl ifconfig -a`<br>
+	`config system interface edit <interface_name> set mtu-override enable set mtu 1400 end`<br>
+
+
 
 **參考來源與更詳細的說明**
 https://docs.microsoft.com/zh-tw/azure/vpn-gateway/vpn-gateway-about-vpn-devices <br>
