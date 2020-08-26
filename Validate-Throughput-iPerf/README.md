@@ -8,14 +8,41 @@ iPerf 會產生從一端到另一端自我產生的 TCP 流量。根據用來測
 此測試完成之後，建議您反轉節點的角色，以測試兩個節點上的上傳和下載輸送量，強烈建議非尖峰時段執行此驗證比較準確。<br>
 
 ## 環境說明
- 
  ![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/Validate-Throughput-iPerf/image/lab.PNG "lab")<br>
  - 使用現有的 Azure S2S Tunnel，請參考[實作 Azure 與 Fortigate 60E 的 S2S 連線](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/tree/master/S2S/Fortigate) <br>
- - 使用 Azure VM (172.16.1.4)與 On Premises VM (192.168.1.112)驗證網路輸送量
+ - 使用 Azure Windows VM (172.16.1.4)與 On Premises Windows VM (192.168.1.112)驗證網路輸送量
  
 ## 設定 iPerf 
 
  - 伺服器端(Azure VM)<br>
+	- 下載 https://iperf.fr/iperf-download.php，並解壓縮至 C:\<br>
+	![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/Validate-Throughput-iPerf/image/lab.PNG "lab")<br>
+	![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/Validate-Throughput-iPerf/image/iperfset1.PNG "iperfset1")<br>
+	![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/Validate-Throughput-iPerf/image/iperfset2.PNG "iperfset2")<br>
+	- 啟用連接埠 5001 的防火牆例外狀況，因為稍後也要測試透過 Internet 傳輸速率，所以也記得要將網路安全性群組輸入規則加入一筆 5001 的規則<br>
+	`netsh advfirewall firewall add rule name="Open Port 5001" dir=in action=allow protocol=TCP localport=5001`<br>
+	![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/Validate-Throughput-iPerf/image/iperfset3.PNG "iperfset3")<br>
+	- 執行命令提示字元，執行iPerf，並將它設定為在埠5001上接聽，完成<br>
+	![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/Validate-Throughput-iPerf/image/iperfset4.PNG "iperfset4")<br>
  - 用戶端 (On Premises VM)<br>
+ 	- 下載 https://iperf.fr/iperf-download.php，並解壓縮至 C:\，圖示說明請參閱伺服器端<br>
+	- 執行命令提示字元，執行iPerf<br>
+	`iperf3.exe -c <IP of the iperf Server> -t 30 -p 5001 -P 32`<br>
+		- -t 指定傳輸測試持續時間
+		- -p 指定連接埠
+		- -P 指定連線數量
+		- -u 指定UDP傳輸協定
+		- -R 反向傳輸
+		- -4 IPv4
+		- -6 IPv6
+		- --logfile 儲存測試結果
+	![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/Validate-Throughput-iPerf/image/iperfset5.PNG "iperfset5")<br>
  - 網路輸送量交叉比較 <br>
- 
+	- 單一 Connection 的速率<br>
+	![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/Validate-Throughput-iPerf/image/iperfset6.PNG "iperfset6")<br>
+	- 32 個 Connection 的速率 <br>
+ 	![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/Validate-Throughput-iPerf/image/iperfset7.PNG "iperfset7")<br>
+	由上面的比較圖來看，多個 Connection 的速率遠優於單一 Connection，所以非常不適合使用大檔案利用 SMB Potocol 拖拉測試速率。<br>
+
+**參考來源與更詳細的說明**<br>
+https://docs.microsoft.com/zh-tw/azure/vpn-gateway/vpn-gateway-validate-throughput-to-vnet<br>
