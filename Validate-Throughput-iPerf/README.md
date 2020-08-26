@@ -16,14 +16,13 @@ iPerf 會產生從一端到另一端自我產生的 TCP 流量。根據用來測
 
  - 伺服器端(Azure VM)<br>
 	- 下載 https://iperf.fr/iperf-download.php，並解壓縮至 C:\  <br>
-	![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/Validate-Throughput-iPerf/image/lab.PNG "lab")<br>
-	![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/Validate-Throughput-iPerf/image/iperfset1.PNG "iperfset1")<br>
-	![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/Validate-Throughput-iPerf/image/iperfset2.PNG "iperfset2")<br>
+	![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/Validate-Throughput-iPerf/image/iperfset1.png "iperfset1")<br>
+	![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/Validate-Throughput-iPerf/image/iperfset2.png "iperfset2")<br>
 	- 啟用連接埠 5001 的防火牆例外狀況，因為稍後也要測試透過 Internet 傳輸速率，所以也記得要將網路安全性群組輸入規則加入一筆 5001 的規則<br>
 	`netsh advfirewall firewall add rule name="Open Port 5001" dir=in action=allow protocol=TCP localport=5001`<br>
-	![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/Validate-Throughput-iPerf/image/iperfset3.PNG "iperfset3")<br>
+	![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/Validate-Throughput-iPerf/image/iperfset3.png "iperfset3")<br>
 	- 執行命令提示字元，執行iPerf，並將它設定為在埠5001上接聽，完成<br>
-	![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/Validate-Throughput-iPerf/image/iperfset4.PNG "iperfset4")<br>
+	![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/Validate-Throughput-iPerf/image/iperfset4.png "iperfset4")<br>
  - 用戶端 (On Premises VM)<br>
  	- 下載 https://iperf.fr/iperf-download.php，並解壓縮至 C:\，圖示說明請參閱伺服器端<br>
 	- 執行命令提示字元，執行iPerf<br>
