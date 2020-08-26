@@ -6,11 +6,11 @@
 ## 環境說明
 
  在建立 S2S VPN 期間，您需要了解內部部署與 Azure 的網路環境與相關配置，常見的蒐集資訊如下。
-
+ ![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/S2S/Fortigate/image/lab.PNG "lab")<br>
  - On Premises 環境
 	- Fortigate 60E v6.2.2 build1010，請確認您的 VPN 設備有出現在設備驗證清單中 <br>
 	  https://docs.microsoft.com/zh-tw/azure/vpn-gateway/vpn-gateway-about-vpn-devices<br>
-	- Public IP : 114.32.191.\*\*\* <br>
+	- Public IP : 114.32.191.\*\*\*，**您的會與本篇顯示的不同**<br>
 	- VLAN(Subnet) ： 192.168.1.0/24<br>
 	- Pre-shared Key ：20200825<br>
 
