@@ -42,7 +42,8 @@ iPerf 會產生從一端到另一端自我產生的 TCP 流量。根據用來測
 	![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/Validate-Throughput-iPerf/image/iperfset6.PNG "iperfset6")<br>
 	- 32 個 Connection 的速率 <br>
  	![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/Validate-Throughput-iPerf/image/iperfset7.PNG "iperfset7")<br>
-	由上面的比較圖來看，多個 Connection 的速率遠優於單一 Connection，所以非常不適合使用大檔案利用 SMB Potocol 拖拉測試速率。<br>
+	由上面的比較圖來看，多個 Connection 的速率遠優於單一 Connection，所以非常不適合使用大檔案利用 SMB Potocol 拖拉測試速率。如果這邊測試出來的速率不滿意，那這樣傳輸速率就會好非常多，可以透過以下的練習來體驗一下。
+	可能需要檢查 VPN 設備的 phase 2 演算法、ISP 線路穩定度與實際速率、 Azure VM Size 的頻寬限制的方向來查找。<br>
 
 **參考來源與更詳細的說明**<br>
 https://docs.microsoft.com/zh-tw/azure/vpn-gateway/vpn-gateway-validate-throughput-to-vnet<br>
