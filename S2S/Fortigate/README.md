@@ -92,6 +92,7 @@
 		![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/S2S/Fortigate/image/fortigate11.PNG "fortigate11")<br>	
 
 ## 延伸閱讀
+ - [使用 iPerf 驗證網路輸送量](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/tree/master/Validate-Throughput-iPerf)<br>
 
 
 
