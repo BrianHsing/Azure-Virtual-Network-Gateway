@@ -3,6 +3,7 @@
  - Site to Site VPN <br>
 	- 單一 VPN 通道 <br>
 		- [實作 Azure 與 Fortigate 60E 的 S2S 連線](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/tree/master/S2S/Fortigate) <br>
+		- 實作 Azure 與 CheckPoint Virtual Firewall 的 S2S 連線
 	- 設定強制通道(forced tunneling)<br>
  - Point to Site VPN <br>
 	
