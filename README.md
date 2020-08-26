@@ -10,5 +10,5 @@
  - Express Route <br>
 
  - 驗證傳輸到虛擬網路的 VPN 輸送量<br>
-	- 使用 iPerf 驗證網路輸送量
-	- 使用 Latte 進行延遲測試
+	- [使用 iPerf 驗證網路輸送量](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/tree/master/Validate-Throughput-iPerf)<br>
+	- 使用 Latte 進行延遲測試<br>
