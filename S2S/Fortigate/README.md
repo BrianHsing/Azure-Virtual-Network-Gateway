@@ -90,7 +90,9 @@
 		```
 	
 		![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/S2S/Fortigate/image/fortigate11.PNG "fortigate11")<br>	
-
+ - 確認 Azure 網段上的虛擬機器能夠與 On Premise 的虛擬機器溝通<br>
+ ![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/S2S/Fortigate/image/ping.png "ping")<br>	
+ 
 ## 延伸閱讀
  - [使用 iPerf 驗證網路輸送量](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/tree/master/Validate-Throughput-iPerf)<br>
 
