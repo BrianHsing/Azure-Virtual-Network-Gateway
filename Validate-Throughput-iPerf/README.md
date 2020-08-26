@@ -15,7 +15,7 @@ iPerf 會產生從一端到另一端自我產生的 TCP 流量。根據用來測
 ## 設定 iPerf 
 
  - 伺服器端(Azure VM)<br>
-	- 下載 https://iperf.fr/iperf-download.php，並解壓縮至 C:\  <br>
+	- 下載 https://iperf.fr/iperf-download.php ，並解壓縮至 C:\  <br>
 	![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/Validate-Throughput-iPerf/image/iperfset1.png "iperfset1")<br>
 	![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/Validate-Throughput-iPerf/image/iperfset2.png "iperfset2")<br>
 	- 啟用連接埠 5001 的防火牆例外狀況，因為稍後也要測試透過 Internet 傳輸速率，所以也記得要將網路安全性群組輸入規則加入一筆 5001 的規則<br>
