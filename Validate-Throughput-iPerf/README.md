@@ -12,3 +12,10 @@ iPerf 會產生從一端到另一端自我產生的 TCP 流量。根據用來測
  ![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/Validate-Throughput-iPerf/image/lab.PNG "lab")<br>
  - 使用現有的 Azure S2S Tunnel，請參考[實作 Azure 與 Fortigate 60E 的 S2S 連線](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/tree/master/S2S/Fortigate) <br>
  - 使用 Azure VM (172.16.1.4)與 On Premises VM (192.168.1.112)驗證網路輸送量
+ 
+## 設定 iPerf 
+
+ - 伺服器端(Azure VM)<br>
+ - 用戶端 (On Premises VM)<br>
+ - 網路輸送量交叉比較 <br>
+ 
