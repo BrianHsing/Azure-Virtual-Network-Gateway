@@ -77,6 +77,7 @@
  ![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/S2S/Fortigate/image/fortigate8.PNG "fortigate8")<br>	
  - 設定 Policy (原則)，這裡設定 Azure 子網路到內部部署子網段的連線管理原則，**NAT 請關閉**<br>
  ![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/S2S/Fortigate/image/fortigate9.PNG "fortigate9")<br>	
+ - 設定 Policy (原則)，這裡設定 內部部署子網段到 Azure 子網路的連線管理原則，**NAT 請關閉**<br>
  ![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/S2S/Fortigate/image/fortigate10.PNG "fortigate10")<br>	
  - TCP MSS 設定為 1350 (TCP資料封包每次能夠傳輸的最大資料分段)<br>
 	- 設定方式是將剛剛新增的兩筆 Policy 透過命令列的方式設定 TCP MSS 1350<br>
