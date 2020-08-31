@@ -17,7 +17,7 @@
 	- 子網路：WorkloadSubnet(172.16.1.0/24)<br>
 ## Azure 入口網站
  - 設定路由表(UDR)<br>
-	- 在 Azure 入口網站搜尋欄中搜尋路由，並點選
+	- 在 Azure 入口網站搜尋欄中搜尋路由，並點選<br>
 	![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/forced-tunneling/image/routetable.PNG "routetable")<br>
 	- 建立路由表需填入訂用帳戶、資源群組、區域、名稱、**傳播閘道路由請點選 Yes**
 	![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/forced-tunneling/image/routetable1.PNG "routetable1")<br>
@@ -37,7 +37,7 @@
 		$VirtualGateway = Get-AzVirtualNetworkGateway -Name "VPNGW" -ResourceGroupName "F60E-S2S-Lab"
 		Set-AzVirtualNetworkGatewayDefaultSite -GatewayDefaultSite $LocalGateway -VirtualNetworkGateway $VirtualGateway
 	 ```
-
+	![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/forced-tunneling/image/DefualtSite.PNG "DefualtSite")<br>
 ## Fortigate 60E
  - 啟用 Fortigate VPN Tunnel NAT<br>
  - 設定 Phase 2 Selector 0.0.0.0/24<br>
