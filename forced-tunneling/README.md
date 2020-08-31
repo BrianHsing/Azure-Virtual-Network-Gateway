@@ -45,6 +45,13 @@
  - 新增 Fortigate Policy 並開啟 NAT<br>
  ![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/forced-tunneling/image/fortigate3.PNG "fortigate3")<br>
 ## 啟用後測試
+ - 未啟用 Forced Tunneling <br>
+  ![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/forced-tunneling/image/test.PNG "test")<br>
+ - 啟用 Forced Tunneling <br>
+  ![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/forced-tunneling/image/test1.PNG "test1")<br>
+ - Fortigate Forward Traffic<br>
+  ![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/forced-tunneling/image/fortigate4.PNG "fortigate4")<br>
+
 
 **參考來源與更詳細的說明**<br>
 https://docs.microsoft.com/zh-tw/azure/vpn-gateway/vpn-gateway-forced-tunneling-rm
