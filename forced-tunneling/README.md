@@ -42,7 +42,7 @@
  ![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/forced-tunneling/image/fortigate1.PNG "fortigate1")<br>
  - 設定 Phase 2 Selector 0.0.0.0/0.0.0.0<br>
  ![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/forced-tunneling/image/fortigate2.PNG "fortigate2")<br>
- - 新增 Fortigate Policy 並開啟 NAT<br>
+ - 新增 Fortigate Policy 並開啟 NAT，請注意 Incoming Interface 是否為綠色，紅色代表 down，綠色代表 up，可以去 IPsec Monitor Bring Up<br>
  ![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/forced-tunneling/image/fortigate3.PNG "fortigate3")<br>
 ## 啟用後測試
  - 未啟用 Forced Tunneling <br>
