@@ -12,8 +12,15 @@
  - 使用現有的 Azure S2S Tunnel，請參考[實作 Azure 與 Fortigate 60E 的 S2S 連線](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/tree/master/S2S/Fortigate) <br>
 
 ## Azure 入口網站
+ - 設定路由表(UDR)<br>
+ - 使用 Powershell 命令設定 GatewayDefaultSite<br>
 
 ## Fortigate 60E
+ - 啟用 Fortigate VPN Tunnel NAT<br>
+ - 設定 Phase 2 Selector 0.0.0.0/24<br>
+ - 啟用 Fortigate Policy NAT<br>
+ 
+## 啟用後測試
 
 **參考來源與更詳細的說明**<br>
 https://docs.microsoft.com/zh-tw/azure/vpn-gateway/vpn-gateway-forced-tunneling-rm
