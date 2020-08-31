@@ -38,10 +38,12 @@
 		Set-AzVirtualNetworkGatewayDefaultSite -GatewayDefaultSite $LocalGateway -VirtualNetworkGateway $VirtualGateway
 	 ```
 ## Fortigate 60E
- - 啟用 Fortigate VPN Tunnel NAT<br>
- - 設定 Phase 2 Selector 0.0.0.0/24<br>
- - 啟用 Fortigate Policy NAT<br>
- 
+ - 開啟 VPN Tunnel，在 Network 區塊中，將 NAT Traversal Enable<br>
+ ![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/forced-tunneling/image/fortigate1.PNG "fortigate1")<br>
+ - 設定 Phase 2 Selector 0.0.0.0/0.0.0.0<br>
+ ![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/forced-tunneling/image/fortigate2.PNG "fortigate2")<br>
+ - 新增 Fortigate Policy 並開啟 NAT<br>
+ ![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/forced-tunneling/image/fortigate3.PNG "fortigate3")<br>
 ## 啟用後測試
 
 **參考來源與更詳細的說明**<br>
