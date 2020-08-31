@@ -37,7 +37,6 @@
 		$VirtualGateway = Get-AzVirtualNetworkGateway -Name "VPNGW" -ResourceGroupName "F60E-S2S-Lab"
 		Set-AzVirtualNetworkGatewayDefaultSite -GatewayDefaultSite $LocalGateway -VirtualNetworkGateway $VirtualGateway
 	 ```
-	![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/forced-tunneling/image/DefualtSite.PNG "DefualtSite")<br>
 ## Fortigate 60E
  - 啟用 Fortigate VPN Tunnel NAT<br>
  - 設定 Phase 2 Selector 0.0.0.0/24<br>
