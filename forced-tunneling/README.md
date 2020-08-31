@@ -13,17 +13,21 @@
  - 盤點會用到的資訊<br>
 	- 虛擬網路閘道名稱：VNETGW<br>
 	- 區域網路閘道：LOCALGW<br>
+	- 虛擬網路：VNET<br>
 	- 子網路：WorkloadSubnet(172.16.1.0/24)<br>
 ## Azure 入口網站
  - 設定路由表(UDR)<br>
 	- 在 Azure 入口網站搜尋欄中搜尋路由，並點選
-	
+	![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/forced-tunneling/image/routetable.PNG "routetable")<br>
 	- 建立路由表需填入訂用帳戶、資源群組、區域、名稱、**傳播閘道路由請點選 Yes**
+	![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/forced-tunneling/image/routetable1.PNG "routetable1")<br>
+	- 建立完成後，點選路由表，在設定的欄位下選擇「路由」，再點選「新增」<br>
+	![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/forced-tunneling/image/routetable2.PNG "routetable2")<br>
+	- 在新增路由的頁面中輸入路由名稱、位址首碼「0.0.0.0/0」，下一個躍點類型選擇「虛擬網路閘道」，將 Internet 流量導入到虛擬網路閘道<br>
+	![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/forced-tunneling/image/routetable3.PNG "routetable3")<br>
+	- 在設定欄位下選擇「子網路」，再點選「新增」， 選擇虛擬網路 VNET，並將子網路關聯到 WorkloadSubnet<br>
+	![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/forced-tunneling/image/routetable4.PNG "routetable4")<br>
 	
-	-
-	-
-	-
-	-
  - 使用 Powershell 命令設定 GatewayDefaultSite<br>
 	- 啟用 CloudShell<br>
     - 輸入`Connect-AzAccount` 登入<br>
