@@ -6,8 +6,8 @@ UDP Potocol 測量，由於實際應用程式均使用 TCP、UDP 溝通與交換
 ## 環境說明
  ![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/latency-test-latte/image/lab.PNG "lab")<br>
  - 使用現有的 Azure S2S Tunnel，請參考[實作 Azure 與 Fortigate 60E 的 S2S 連線](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/tree/master/S2S/Fortigate) <br>
- - 使用 Azure Windows VM (172.16.1.4)與 On Premises Windows VM (192.168.1.112)驗證網路輸送量<br>
- - 使用 On Premises Windows VM (192.168.1.111)與 On Premises Windows VM (192.168.1.112)驗證網路輸送量<br>
- - 使用 Azure Windows VM (Public IP)與 On Premises Windows VM (114.32.191.\*\*\*)驗證網路輸送量<br>
+ - 使用 Azure Windows VM (172.16.1.4)與 On Premises Windows VM (192.168.1.112)測試網路延遲<br>
+ - 使用 On Premises Windows VM (192.168.1.111)與 On Premises Windows VM (192.168.1.112)測試網路延遲<br>
+ - 使用 Azure Windows VM (Public IP)與 On Premises Windows VM (114.32.191.\*\*\*)測試網路延遲<br>
 
 ## 設定 Latte.exe
