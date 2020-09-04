@@ -33,5 +33,7 @@ UDP Potocol 測量，由於實際應用程式均使用 TCP、UDP 溝通與交換
  - 使用 On Premises Windows VM (192.168.1.111)與 On Premises Windows VM (192.168.1.112)測試網路延遲<br>
  ![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/latency-test-latte/image/latte0.PNG "latte0")<br>
 
+由上方兩張結果來看，可以知道通過 S2S VPN 連線的延遲為 8.2 ms，但如果是在同的網段內的連線延遲為 0.19 ms，由此來看，
+如果您的 AP 與 DB 想分別放在雲端與內部部署的話，就會碰到延遲的問題，建議將有相依性的服務與設備放在同一個區域，存取效率也會比較高。<br>
 **參考來源與更詳細的說明**
 https://docs.microsoft.com/zh-tw/azure/virtual-network/virtual-network-test-latency
