@@ -14,7 +14,7 @@ UDP Potocol 測量，由於實際應用程式均使用 TCP、UDP 溝通與交換
  ![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/latency-test-latte/image/latte1.PNG "latte1")<br>
  ![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/latency-test-latte/image/latte2.PNG "latte2")<br>
  - 請建立 `C:\tools`，並將 latte.exe 放在此資料夾中<br>
- > **Tips.每個主機上都需要操作上述步驟** <br>
+	> **Tips.每個主機上都需要操作上述 2 個步驟** <br>
  - 允許 latte.exe 通過 Windows Defender 防火牆，開啟命令提示字元輸入下方命令<br>
  `netsh advfirewall firewall add rule program=c:\tools\latte.exe name="Latte" protocol=any dir=in action=allow enable=yes profile=ANY`
  - 執行延遲測試，主要會分接收者與傳送者<br>
@@ -24,7 +24,7 @@ UDP Potocol 測量，由於實際應用程式均使用 TCP、UDP 溝通與交換
 	-在擔任傳送者角色的主機上，開啟命令提示字元，輸入以下命令，使用 65100 次疊代測試<br>
 	`latte -a 172.16.1.4:5005 -i 65100`<br>
 	 ![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/latency-test-latte/image/latte4.PNG "latte4")<br>
- > **Tips.測試可能需要幾分鐘的時間才能完成。在執行較長的測試之前，請考慮以較少的反覆運算開始測試是否成功。** <br>
+	> **Tips.測試可能需要幾分鐘的時間才能完成。在執行較長的測試之前，請考慮以較少的反覆運算開始測試是否成功。** <br>
 
 ## 延遲比較
 
