@@ -29,6 +29,7 @@ UDP Potocol 測量，由於實際應用程式均使用 TCP、UDP 溝通與交換
 ## 延遲比較
 
  - 使用 Azure Windows VM (172.16.1.4)與 On Premises Windows VM (192.168.1.112)測試網路延遲<br>
+ ![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/latency-test-latte/image/latte.PNG "latte")<br>
  - 使用 On Premises Windows VM (192.168.1.111)與 On Premises Windows VM (192.168.1.112)測試網路延遲<br>
 
 **參考來源與更詳細的說明**
