@@ -1,7 +1,7 @@
 # 使用 Latte 進行延遲測試
 Latte 是 Microsoft 用於測量網路延遲的工具，不同於其他 ICMP Potocol 的測量工具(例如 Ping)，Latte 是使用 TCP、
 UDP Potocol 測量，由於實際應用程式均使用 TCP、UDP 溝通與交換資料，用 Latte 測量會比較符合真實情況的網路延遲時間。
-在這個練習中，主要會做幾個比對，分別是 **Internet**、**S2S VPN**、**Local Network** 的實際網路延遲時間的比較。<br>
+在這個練習中，主要會做幾個比對，分別是 **S2S VPN**、**Local Network** 的實際網路延遲時間的比較。<br>
 
 ## 環境說明
  ![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/latency-test-latte/image/lab.PNG "lab")<br>
