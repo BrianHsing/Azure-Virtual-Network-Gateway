@@ -4,7 +4,7 @@
  - 設定路由表(UDR)<br>
  - 使用 Powershell 命令設定 GatewayDefaultSite <br>
  - 啟用 Fortigate VPN Tunnel NAT<br>
- - 設定 Phase 2 Selector 0.0.0.0/24<br>
+ - 設定 Phase 2 Selector 0.0.0.0/0.0.0.0<br>
  - 新增 Fortigate Policy 並開啟 NAT<br>
  
 ## 環境說明
