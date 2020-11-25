@@ -34,7 +34,7 @@
  - 根憑證名稱您可以自行定義，公開憑證資料請填入您剛剛複製的公開金鑰，點選儲存<br>
  ![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/P2S/customroute1.png "customroute1")<br>
  - 儲存後，請點選下載 VPN 用戶端，您會看到下載一個與您虛擬網路閘道相同名字的壓縮檔，以 64 位元系統為例，請選擇 WindowsAmd64 資料夾解壓縮，點選 VpnClientSetupAmd64.exe 安裝<br>
- - 使用 VPN 用戶端連線後，您可以檢查路由表
+ - 使用 VPN 用戶端連線後，您可以檢查路由表，可以看到 10.200.0.0/22 都會路由至 10.200.4.2，但並沒有將 192.168.1.0/24 路由至 10.200.4.2，您必須再做一些設定才能完成<br>
  ![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/P2S/customroute2.png "customroute2")<br>
 ## 新增 On-Premises 路由至您的 P2S VPN 用戶端
 
