@@ -10,6 +10,7 @@
 	  https://docs.microsoft.com/zh-tw/azure/vpn-gateway/vpn-gateway-about-vpn-devices<br>
 	- Public IP : 114.32.191.\*\*\*，**您的會與本篇顯示的不同**<br>
 	- VLAN(Subnet) ： 192.168.1.0/24<br>
+	- *請注意 Static Route 必須要包含 P2S 位址集區*
  - Azure 虛擬網路環境<br>
 	- 虛擬網路名稱 ： VNet<br>
 	- 位置空間 ： 10.200.0.0/22<br>
