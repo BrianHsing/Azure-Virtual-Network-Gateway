@@ -14,7 +14,7 @@
 	- 虛擬網路名稱 ： VNet<br>
 	- 位置空間 ： 10.200.0.0/22<br>
 	- 閘道公用 IP 位址：40.83.96.\*\*\*，**您建立的會與本篇顯示的不同**<br>
-	- 使用者 VPN 設定位置集區：10.200.4.0/24<br>
+	- 使用者 VPN 設定位址集區：10.200.4.0/24<br>
 ## 建立自我簽署憑證
 本系列使用 MakeCert 來產生用戶端憑證，如需要了解細節步驟，請參考[使用 MakeCert 來產生並匯出點對站連線的憑證](https://docs.microsoft.com/zh-tw/azure/vpn-gateway/vpn-gateway-certificates-point-to-site-makecert)。<br>
 本篇會使用做好的批次檔，快速的產生所需的用戶端憑證，並且可以利用匯出的用戶端憑證個別安裝或透過 GPO 散發。<br>
@@ -28,3 +28,8 @@
  - 執行 rootInstall.bat<br>
  - 進入 outputCert 資料夾，選擇 updateToAzureCert.cer 按下右鍵選擇記事本開啟，複製公開金鑰，此公開金鑰會在稍後的使用者 VPN 設定中填入<br>
 ## 虛擬網路閘道設定使用者 VPN 設定
+ - 選擇您的虛擬網路閘道，再設定分類中選擇使用者 VPN 設定<br>
+ - 位址集區填入：10.200.4.0/24<br>
+ - 驗證類型選擇 Azure 憑證<br>
+ - 根憑證名稱您可以自行定義，公開憑證資料請填入您剛剛複製的公開金鑰<br>
+![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/P2S "lab")<br>
