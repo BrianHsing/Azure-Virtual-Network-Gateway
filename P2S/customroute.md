@@ -67,3 +67,7 @@
  ![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/P2S/customroute4.png "customroute4")<br>
  - 確認可以 Ping 到防火牆的內部 IP 192.168.1.99<br>
  ![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/P2S/customroute5.png "customroute5")<br>
+
+## 參考連結
+[關於點對站 VPN](https://docs.microsoft.com/zh-tw/azure/vpn-gateway/point-to-site-about)<br>
+[公告 P2S VPN 用戶端的自訂路由](https://docs.microsoft.com/zh-tw/azure/vpn-gateway/vpn-gateway-p2s-advertise-custom-routes)<br>
