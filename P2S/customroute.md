@@ -2,3 +2,29 @@
 本篇使用 實作 P2S VPN 用戶端自訂至內部部署，在開始之前您需要先了解遇到的挑戰：<br>
 - S2S 必須是連接狀態，並且您的內部部署的設備靜態路由必須要包含 P2S 網段<br>
 - IKEv2 基於 Policy Base，所以路由不會動態新增，您必須在 P2S VPN 用戶端手動增加路由，或著您也可以在虛擬網路匣道中自訂路由<br>
+## 環境描述
+在建立 P2S VPN 時，您需要了解內部部署與 Azure 的網路環境與相關配置，常見的蒐集資訊如下。
+ ![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/S2S/Fortigate/image/lab.PNG "lab")<br>
+ - On Premises 環境
+	- Fortigate 60E v6.2.2 build1010，請確認您的 VPN 設備有出現在設備驗證清單中 <br>
+	  https://docs.microsoft.com/zh-tw/azure/vpn-gateway/vpn-gateway-about-vpn-devices<br>
+	- Public IP : 114.32.191.\*\*\*，**您的會與本篇顯示的不同**<br>
+	- VLAN(Subnet) ： 192.168.1.0/24<br>
+ - Azure 虛擬網路環境<br>
+	- 虛擬網路名稱 ： VNet<br>
+	- 位置空間 ： 10.200.0.0/22<br>
+	- 閘道公用 IP 位址：40.83.96.\*\*\*，**您建立的會與本篇顯示的不同**<br>
+	- 使用者 VPN 設定位置集區：10.200.4.0/24<br>
+## 建立自我簽署憑證
+本系列使用 MakeCert 來產生用戶端憑證，如需要了解細節步驟，請參考[使用 MakeCert 來產生並匯出點對站連線的憑證](https://docs.microsoft.com/zh-tw/azure/vpn-gateway/vpn-gateway-certificates-point-to-site-makecert)。<br>
+本篇會使用做好的批次檔，快速的產生所需的用戶端憑證，並且可以利用匯出的用戶端憑證個別安裝或透過 GPO 散發。<br>
+ - 首先請在您的用戶端先下載工具[點對站憑證批次檔](https://mega.nz/file/pZM03DAY#dGmUTw6EbyFYgQfkXZwS6A5vrNbIx08QsD2mi1B8qks)<br>
+ - 解完壓縮您會看到 install Cert 資料夾，其中包含幾個檔案：<br>
+   - outputCert：匯出的公開金鑰、用戶端憑證所儲存的資料夾<br>
+   - CertMgr.exe：憑證管理工具<br>
+   - ClientInstall.bat：在其他用戶端上幫助您快速的將用戶端憑證匯入<br>
+   - makecert.exe：使用 MakeCert 來建立自我簽署憑證<br>
+   - 使用方法.txt：簡易敘述使用方法<br>
+ - 執行 rootInstall.bat<br>
+ - 進入 outputCert 資料夾，選擇 updateToAzureCert.cer 按下右鍵選擇記事本開啟，複製公開金鑰，此公開金鑰會在稍後的使用者 VPN 設定中填入<br>
+## 虛擬網路閘道設定使用者 VPN 設定
