@@ -4,7 +4,7 @@
 - IKEv2 基於 Policy Base，所以路由不會動態新增，您必須在 P2S VPN 用戶端手動增加路由，或著您也可以在虛擬網路匣道中自訂路由<br>
 ## 環境描述
 在建立 P2S VPN 時，您需要了解內部部署與 Azure 的網路環境與相關配置，常見的蒐集資訊如下。
- ![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/S2S/Fortigate/image/lab.PNG "lab")<br>
+ ![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/S2S/Fortigate/image/customroutelab.PNG "customroutelab")<br>
  - On Premises 環境
 	- Fortigate 60E v6.2.2 build1010，請確認您的 VPN 設備有出現在設備驗證清單中 <br>
 	  https://docs.microsoft.com/zh-tw/azure/vpn-gateway/vpn-gateway-about-vpn-devices<br>
@@ -34,7 +34,8 @@
  - 根憑證名稱您可以自行定義，公開憑證資料請填入您剛剛複製的公開金鑰，點選儲存<br>
  ![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/P2S/customroute1.png "customroute1")<br>
  - 儲存後，請點選下載 VPN 用戶端，您會看到下載一個與您虛擬網路閘道相同名字的壓縮檔，以 64 位元系統為例，請選擇 WindowsAmd64 資料夾解壓縮，點選 VpnClientSetupAmd64.exe 安裝<br>
-
+ - 使用 VPN 用戶端連線後，您可以檢查路由表
+ ![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/P2S/customroute2.png "customroute2")<br>
 ## 新增 On-Premises 路由至您的 P2S VPN 用戶端
 
 由於 IKEv2 是 Policy Base，所以您必須手動自訂路由至您的 P2S VPN 用戶端，主要會有 3 種方式，您可以選擇其中一種達成新增路由的目的<br>
