@@ -33,4 +33,9 @@
  - 驗證類型選擇 Azure 憑證<br>
  - 根憑證名稱您可以自行定義，公開憑證資料請填入您剛剛複製的公開金鑰，點選儲存<br>
  ![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/P2S/customroute1.png "customroute1")<br>
- - 儲存後，請點選下載 VPN 用戶端<br>
+ - 儲存後，請點選下載 VPN 用戶端，您會看到下載一個與您虛擬網路閘道相同名字的壓縮檔，以 64 位元系統為例，請選擇 WindowsAmd64 資料夾解壓縮，點選 VpnClientSetupAmd64.exe 安裝<br>
+
+## 新增 On-Premises 路由至您的 P2S VPN 用戶端
+
+由於 IKEv2 是 Policy Base，所以您必須手動自訂路由至您的 P2S VPN 用戶端，主要會有 3 種方式，您可以選擇其中一種達成新增路由的目的<br>
+ - 
