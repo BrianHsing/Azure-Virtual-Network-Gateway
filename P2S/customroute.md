@@ -31,5 +31,6 @@
  - 選擇您的虛擬網路閘道，再設定分類中選擇使用者 VPN 設定<br>
  - 位址集區填入：10.200.4.0/24<br>
  - 驗證類型選擇 Azure 憑證<br>
- - 根憑證名稱您可以自行定義，公開憑證資料請填入您剛剛複製的公開金鑰<br>
-![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/P2S "lab")<br>
+ - 根憑證名稱您可以自行定義，公開憑證資料請填入您剛剛複製的公開金鑰，點選儲存<br>
+ ![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/P2S/customroute1.png "customroute1")<br>
+ - 儲存後，請點選下載 VPN 用戶端<br>
