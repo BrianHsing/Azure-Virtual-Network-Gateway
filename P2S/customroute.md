@@ -36,6 +36,9 @@
  - 儲存後，請點選下載 VPN 用戶端，您會看到下載一個與您虛擬網路閘道相同名字的壓縮檔，以 64 位元系統為例，請選擇 WindowsAmd64 資料夾解壓縮，點選 VpnClientSetupAmd64.exe 安裝<br>
  - 使用 VPN 用戶端連線後，您可以檢查路由表，可以看到 10.200.0.0/22 都會路由至 10.200.4.2，但並沒有將 192.168.1.0/24 路由至 10.200.4.2，您必須再做一些設定才能完成<br>
  ![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/P2S/customroute2.png "customroute2")<br>
+ - 確認是無法 Ping 到防火牆的內部 IP 192.168.1.99<br>
+ ![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/P2S/customroute3.png "customroute3")<br>
+ 
 ## 新增 On-Premises 路由至您的 P2S VPN 用戶端
 
 由於 IKEv2 是 Policy Base，所以您必須手動自訂路由至您的 P2S VPN 用戶端，主要會有 3 種方式，您可以選擇其中一種達成新增路由的目的<br>
