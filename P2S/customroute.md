@@ -47,10 +47,10 @@
    - 啟用 CloudShell<br>
    - 輸入`Connect-AzAccount` 登入<br>
    - 輸入以下命令<br>
-   ```
-   $gw = Get-AzVirtualNetworkGateway -Name <name of gateway> -ResourceGroupName <name of resource group>
-   Set-AzVirtualNetworkGateway -VirtualNetworkGateway $gw -CustomRoute 192.168.1.0/24
-   ``` 
+      ```
+      $gw = Get-AzVirtualNetworkGateway -Name <name of gateway> -ResourceGroupName <name of resource group>
+      Set-AzVirtualNetworkGateway -VirtualNetworkGateway $gw -CustomRoute 192.168.1.0/24
+      ``` 
    - 查詢自訂路由，請輸入命令`$gw.CustomRoutes | Format-List`
    ![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/P2S/customroute6.png "customroute6")<br> 
    - 移除 VPN 用戶端，重新下載 VPN 用戶端後，重新安裝後連線<br>
