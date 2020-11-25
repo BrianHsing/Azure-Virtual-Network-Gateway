@@ -41,7 +41,7 @@
  
 ## 新增 On-Premises 路由至您的 P2S VPN 用戶端
 由於 IKEv2 是 Policy Base，所以您必須手動自訂路由至您的 P2S VPN 用戶端，主要會有 3 種方式，您可以選擇其中一種達成新增路由的目的<br>
- - 公告 P2S VPN 用戶端的自訂路由<br>
+ - 選項 1.公告 P2S VPN 用戶端的自訂路由<br>
    使用此方法好處是您不需要再 VPN 用戶端新增路由，但如果路由變更，您必須重新下載 VPN 用戶端，並重新安裝<br>
    - 啟用 CloudShell<br>
    - 輸入`Connect-AzAccount` 登入<br>
@@ -53,19 +53,16 @@
    - 查詢自訂路由，請輸入命令`$gw.CustomRoutes | Format-List`
    ![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/P2S/customroute6.png "customroute6")<br> 
    - 移除 VPN 用戶端，重新下載 VPN 用戶端後，重新安裝後連線<br>
-   - 確認可以 Ping 到防火牆的內部 IP 192.168.1.99<br>
-   ![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/P2S/customroute5.png "customroute5")<br>
- - 將路由加入至 VPN 設定檔 route.txt<br>
+
+ - 選項 2.將路由加入至 VPN 設定檔 route.txt<br>
    使用此方法您必須已經安裝 VPN 用戶端，並且在更新 route.txt 後，要重新連線<br>
    - 找到路徑`%appdata%/Microsoft/Network/Connections/Cm//routes.txt`的 route.txt 檔案並開啟<br>
    - 加入一行`ADD 192.168.1.0 MASK 255.255.255.0 default METRIC default IF default`<br>
    - 重新連線 VPN 用戶端<br>
-   - 確認可以 Ping 到防火牆的內部 IP 192.168.1.99<br>
-   ![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/P2S/customroute5.png "customroute5")<br>
- - 使用 route add 將路由加入至網路介面<br>
+ - 選項 3.使用 route add 將路由加入至網路介面<br>
    您可以使用您熟悉的方法，直接將路由加入到現有的路由表中，但每次連線時您必須重新加入，或著您也可以使用持續路由<br>
    - 開啟命令提示字元，新增路由`route add 192.168.1.0 mask 255.255.255.0 10.200.4.2`、新增持續路由`route add 192.168.1.0 mask 255.255.255.0 10.200.4.2 -p`<br>
-   - 確認路由有加入至路由表<br>
-   ![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/P2S/customroute4.png "customroute4")<br>
-   - 確認可以 Ping 到防火牆的內部 IP 192.168.1.99<br>
-   ![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/P2S/customroute5.png "customroute5")<br>
+ - 確認路由有加入至路由表<br>
+ ![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/P2S/customroute4.png "customroute4")<br>
+ - 確認可以 Ping 到防火牆的內部 IP 192.168.1.99<br>
+ ![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/P2S/customroute5.png "customroute5")<br>
