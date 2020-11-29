@@ -7,7 +7,7 @@
  - Point to Site VPN <br>
 	- IKEv2 使用自我簽署憑證<br>
     	- [實作 P2S VPN 用戶端自訂路由至內部部署](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/P2S/customroute.md)<br>
-    	- [實作 P2S VPN 用戶端全通道至內部部署](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/P2S/fulltunnel.md)<br>
+    	- [實作 P2S VPN 用戶端全通道從內部部署連出網際網路](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/P2S/fulltunnel.md)<br>
  - Express Route <br>
 
  - 驗證 S2S VPN<br>
