@@ -49,7 +49,9 @@
    您可以使用您熟悉的方法，直接將路由加入到現有的路由表中，但每次連線時您必須重新加入，或著您也可以使用持續路由<br>
    - 開啟命令提示字元，新增持續路由`route add 0.0.0.0 mask 0.0.0.0 10.200.4.x -p`<br>
  - 確認路由有加入至路由表<br>
- ![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/P2S/fulltunnelroute1.png "fulltunnelroute1")<br>
+ ![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/P2S/fulltunnelroute1-1.png "fulltunnelroute1-1")<br>
  - 確認可以在 Firewall forward traffic log 看到流量<br>
- ![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/P2S/fulltunnelroute2.png "fulltunnelroute2")<br>
+ ![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/P2S/fulltunnelroute2-1.png "fulltunnelroute2-1")<br>
  - 確認網際網路連出的 IP 位址，會顯示您 On Premises 對外的 IP 位址<br>
+   - 開啟命令提示字元，輸入`curl -s checkip.dyndns.org`<br>
+   ![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/P2S/fulltunnelroute3-1.png "fulltunnelroute3-1")<br>
