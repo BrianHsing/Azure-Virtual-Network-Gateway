@@ -1,5 +1,5 @@
 # 實作 P2S VPN 用戶端全通道從內部部署連出網際網路
-本篇使用 IKEv2 搭配自我簽署憑證實作 P2S VPN 用戶端全通道連線，在開始之前您需要先了解遇到的挑戰：<br>
+本篇使用 IKEv2 搭配自我簽署憑證實作 P2S VPN 用戶端全通道連線，您可能會需要將用戶端的連出流量完全由內部部署防火牆管理，在開始之前您需要先了解遇到的挑戰：<br>
 - S2S 必須是連接狀態，並且已啟用強制通道，作法可以參考[實作 Azure 與 Fortigate 60E 的 S2S VPN Forced Tunneling](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/tree/master/forced-tunneling)<br>
 - IKEv2 基於 Policy Base，所以路由不會動態新增，您必須在 P2S VPN 用戶端手動增加路由<br>
 
