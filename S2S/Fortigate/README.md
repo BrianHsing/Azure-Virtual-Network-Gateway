@@ -74,7 +74,7 @@
 	- Phase 2 為快速連線，Local Address 代表內部佈署的網段、Remote Address 代表 Azure 虛擬網路的子網路，Encryption 請選擇 AES256GCM、AES265，Authentication 請選擇 SHA1(Encryption、Authentication 會影響傳輸速率)，取消勾選 Enable Replay Detection(偵測已無回應之連線對象)、PFS(啟動此功能可能會略為影響效能，但可加強安全性)<br>
  	![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/S2S/Fortigate/image/fortigate7.PNG "fortigate7")<br>	
  - 設定 Static Route (靜態路由)，必須要讓設備知道 Azure 虛擬網路子網路該往哪送<br>
- ![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/S2S/Fortigate/image/fortigate8.PNG "fortigate8")<br>	
+ ![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/S2S/Fortigate/image/fortigate8-1.PNG "fortigate8-1")<br>	
  - 設定 Policy (原則)，這裡設定 Azure 子網路到內部部署子網段的連線管理原則，**NAT 請關閉**<br>
  ![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/S2S/Fortigate/image/fortigate9.PNG "fortigate9")<br>	
  - 設定 Policy (原則)，這裡設定內部部署子網段到 Azure 子網路的連線管理原則，**NAT 請關閉**<br>
