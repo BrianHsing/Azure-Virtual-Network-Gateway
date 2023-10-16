@@ -10,7 +10,7 @@ UDP Potocol 測量，由於實際應用程式均使用 TCP、UDP 溝通與交換
  - 使用 On Premises Windows VM (192.168.1.111)與 On Premises Windows VM (192.168.1.112)測試網路延遲<br>
 
 ## 設定 Latte.exe
- - 下載最新版本的 [latte.exe](https://gallery.technet.microsoft.com/Latte-The-Windows-tool-for-ac33093b) ，點選 Download latte.exe，跳出 License 視窗時，請點選 I agree<br>
+ - 下載最新版本的 [latte.exe](https://github.com/microsoft/latte) ，點選 Download latte.exe，跳出 License 視窗時，請點選 I agree<br>
  ![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/latency-test-latte/image/latte1.PNG "latte1")<br>
  ![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/latency-test-latte/image/latte2.PNG "latte2")<br>
  - 請建立 `C:\tools`，並將 latte.exe 放在此資料夾中<br>
