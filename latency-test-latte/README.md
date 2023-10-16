@@ -22,7 +22,7 @@ UDP Potocol 測量，由於實際應用程式均使用 TCP、UDP 溝通與交換
 	`latte -a 172.16.1.4:5005 -i 65100`<br>
 	 ![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/latency-test-latte/image/latte3.PNG "latte3")<br>
 	-在擔任傳送者角色的主機上，開啟命令提示字元，輸入以下命令，使用 65100 次疊代測試<br>
-	`latte -a 172.16.1.4:5005 -i 65100`<br>
+	`latte -c -a 172.16.1.4:5005 -i 65100`<br>
 	 ![GITHUB](https://github.com/BrianHsing/Azure-Virtual-Network-Gateway/blob/master/latency-test-latte/image/latte4.PNG "latte4")<br>
 	> **Tips.測試可能需要幾分鐘的時間才能完成。在執行較長的測試之前，請考慮以較少的反覆運算開始測試是否成功。** <br>
 
